@@ -39,11 +39,70 @@ function getEngineer() {
 }
 
 function getIntern() {
-  inquirerr.prompt([
-    {
-      type: "input",
-      name: "name",
-      message: "Employee name:  "
-    }
-  ]);
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Employee name:  "
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "Employee ID"
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Employee email:  "
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "GitHub user name:  "
+      }
+    ])
+    .then(function(answers) {
+      newemployee = new Intern(
+        answers.name,
+        answers.id,
+        "Intern",
+        answers.github
+      );
+      team.push(newEmployee);
+      repeatQuery();
+    });
+}
+
+function getManager() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "Employee name"
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "Employee ID"
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Employee email:  "
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "GitHub user name:  "
+      }
+    ])
+    .then(function(answers) {
+      newemployee -
+        new getManager(answers.name, answer.id, "Manager", answers.github
+        );
+      team.push(newEmployee);
+      repeatQuery();
+    });
 }
