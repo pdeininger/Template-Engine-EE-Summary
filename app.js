@@ -84,7 +84,7 @@ function devTeam() {
       },
       {
         type: "input",
-        name: "internSchol",
+        name: "internSchool",
         message: "Where does the Intern attend school?"
       }
     ])
